@@ -34,6 +34,15 @@ export default function reducer(
                 users: action.payload
             }
 
+        case getType(actions.addUser):
+            return {
+                ...state,
+                users: [
+                    ...state.users,
+                    action.payload
+                ]
+            }
+
         default:
             return state
     }

@@ -1,27 +1,35 @@
-import React from 'react';
-import { UserPage } from 'Pages/User';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { UserTable } from 'Pages/User/UserTable';
+import { Container, Header, Grid, Button } from 'semantic-ui-react';
+import AddUser from 'Pages/User/AddUser';
 
 function App() {
+
+  const [showForm, setShowForm] = useState<boolean>(false);
+
+  const showModal = () => {
+    setShowForm(true)
+  }
+
+  const closeModal = () => {
+    setShowForm(false)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <UserPage />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <AddUser isOpen={showForm} onClose={closeModal} />
+      <Grid columns={2}>
+        <Grid.Row>
+          <Grid.Column verticalAlign="middle">
+            <Header as='h2'>Header</Header>
+          </Grid.Column>
+          <Grid.Column textAlign="right">
+            <Button content='Add User' onClick={showModal} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <UserTable />
+    </Container>
   );
 }
 

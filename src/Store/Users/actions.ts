@@ -1,4 +1,4 @@
-import { createAsyncAction } from "typesafe-actions";
+import { createAsyncAction, createAction } from "typesafe-actions";
 import { UserInfo } from "../../Model/user";
 
 export const fetchUsers = createAsyncAction(
@@ -7,4 +7,6 @@ export const fetchUsers = createAsyncAction(
     'users/FETCH_FAILED'
 )<void, UserInfo[], string>()
 
-export default { fetchUsers }
+export const addUser = createAction("users/ADD")<UserInfo>();
+
+export default { fetchUsers, addUser }
