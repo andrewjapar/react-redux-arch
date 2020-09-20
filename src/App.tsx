@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserPage } from 'Pages/User';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <UserPage />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
