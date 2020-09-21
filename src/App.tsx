@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { UserTable } from 'Pages/User/UserTable';
-import { Container, Header, Grid, Button } from 'semantic-ui-react';
 import AddUser from 'Pages/User/AddUser';
+import './App.scss';
+import { CContainer, CCol, CCardHeader, CButton, CHeader, CRow } from '@coreui/react';
 
 function App() {
 
@@ -16,20 +17,22 @@ function App() {
   }
 
   return (
-    <Container>
+    <CContainer>
       <AddUser isOpen={showForm} onClose={closeModal} />
-      <Grid columns={2}>
-        <Grid.Row>
-          <Grid.Column verticalAlign="middle">
-            <Header as='h2'>Header</Header>
-          </Grid.Column>
-          <Grid.Column textAlign="right">
-            <Button content='Add User' onClick={showModal} />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <UserTable />
-    </Container>
+      <CRow className="App-header">
+        <CCol sm="6">
+          <h1 className="display-5">List User</h1>
+        </CCol>
+        <CCol sm="6" className="App-header__button">
+          <CButton color="success" onClick={showModal}>Add User</CButton>
+        </CCol>
+      </CRow>
+      <CRow>
+        <CCol sm="12">
+          <UserTable />
+        </CCol>
+      </CRow>
+    </CContainer>
   );
 }
 

@@ -1,59 +1,79 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
-import { Modal, Form, Checkbox, Button } from "semantic-ui-react";
+import { Formik, Form } from 'formik';
 import actions from "Store/Users/actions";
+import { UserInfo } from "Model/user";
+import { CModal, CModalHeader, CModalBody, CFormGroup, CLabel, CInput, CFormText, CModalFooter, CButton } from "@coreui/react";
+import InputField from "./InputField";
 
 interface Props {
     isOpen: boolean;
     onClose: () => void;
 }
 
+const defaultValue: UserInfo = {
+    name: '',
+    website: '',
+    address: '',
+    email: '',
+};
+
 const AddUser: React.FC<Props> = ({ isOpen, onClose }) => {
     const dispatch = useDispatch();
 
-    const submitUser = () => {
-        dispatch(actions.addUser({
-            name: "Sujono Chen",
-            email: "starcokz@gmail.com",
-            address: "Test123",
-            website: "coks.xom"
-        }));
+    const submitUser = (user: UserInfo) => {
+        dispatch(actions.addUser(user));
         onClose()
     }
 
     return (
-        <Modal 
-        onClose={onClose}
-        open={isOpen}>
-            <Modal.Header>Add User</Modal.Header>
-            <Modal.Content>
-            <Form>
-                <Form.Field>
-                    <label>Full Name</label>
-                    <input placeholder='Full Name' />
-                </Form.Field>
-                <Form.Field>
-                    <label>Email</label>
-                    <input placeholder='Email' />
-                </Form.Field>
-                <Form.Field>
-                    <label>Website</label>
-                    <input placeholder='Website' />
-                </Form.Field>
-                <Form.Field>
-                    <Checkbox label='I agree to the Terms and Conditions' />
-                </Form.Field>
-            </Form>
-            </Modal.Content>
-            <Modal.Actions>
-                <Button
-                content="Submit"
-                labelPosition='right'
-                icon='checkmark'
-                onClick={() => submitUser()}
-                positive />
-            </Modal.Actions>
-        </Modal>
+
+        <CModal
+        show={isOpen}
+        onClose={onClose}>
+            <Formik
+            enableReinitialize
+            initialValues={defaultValue}
+            onSubmit={(values: UserInfo) => submitUser(values)}
+            >
+                <Form>
+                    <CModalHeader closeButton>Modal title</CModalHeader>
+                    <CModalBody>
+                        <InputField
+                            type="text"
+                            id="name"
+                            name="name"
+                            label="Full Name"
+                            placeholder="Enter Full Name.."
+                            autoComplete="name"
+                        />
+                        <InputField
+                            type="email"
+                            id="email"
+                            name="email"
+                            label="Email"
+                            placeholder="Enter Email.."
+                            autoComplete="email"
+                        />
+                        <InputField
+                            type="text"
+                            id="webiste"
+                            name="website"
+                            label="Website"
+                            placeholder="Enter Website.."
+                            autoComplete="website"
+                        />
+                    </CModalBody>
+                    <CModalFooter>
+                        <CButton
+                            type="submit"
+                            color="secondary"
+                            >Submit
+                        </CButton>
+                    </CModalFooter>
+                </Form>
+            </Formik>
+        </CModal>
     )
 }
 
