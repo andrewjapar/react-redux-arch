@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { UserTable } from 'Pages/User/UserTable';
 import AddUser from 'Pages/User/AddUser';
 import './App.scss';
-import { CContainer, CCol, CCardHeader, CButton, CHeader, CRow } from '@coreui/react';
+import { CContainer, CCol, CButton, CRow, CNav, CNavItem, CNavLink } from '@coreui/react';
+import { Route, Switch, Link } from 'react-router-dom';
 
 function App() {
 
@@ -18,6 +19,28 @@ function App() {
 
   return (
     <CContainer>
+      <CNav variant="pills" className="App-header">
+        <CNavItem>
+          <CNavLink>
+            <Link to="/">Home</Link>
+          </CNavLink>
+        </CNavItem>
+        <CNavItem>
+          <CNavLink>
+            <Link to="/user">Useasr</Link>
+          </CNavLink>
+        </CNavItem>
+        <CNavItem>
+          <CNavLink>
+            <Link to="/userx">Userx</Link>
+          </CNavLink>
+        </CNavItem>
+      </CNav>
+      <Switch>
+        <Route path="/" exact />
+        <Route path="/user" component={UserTable} />
+        <Route path="/userx" component={UserTable} />
+      </Switch>
       <AddUser isOpen={showForm} onClose={closeModal} />
       <CRow className="App-header">
         <CCol sm="6">
