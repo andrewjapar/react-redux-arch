@@ -1,4 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React-Redux playground for learning purpose
+Actually, this repository created to experiment react hook and new function on redux because i'm still learning. If you think you have a better way to do it, just make a pull request. I will be very happy to learn more.
+
+### Libraries
+- React
+- Redux
+- Redux-Thunk
+- CoreUI
 
 ## Available Scripts
 
