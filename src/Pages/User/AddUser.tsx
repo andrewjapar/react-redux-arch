@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Formik, Form } from 'formik';
 import actions from "Store/Users/actions";
 import { UserInfo } from "Model/user";
-import { CModal, CModalHeader, CModalBody, CFormGroup, CLabel, CInput, CFormText, CModalFooter, CButton } from "@coreui/react";
+import { CModal, CModalHeader, CModalBody, CModalFooter, CButton } from "@coreui/react";
 import InputField from "./InputField";
 
 interface Props {

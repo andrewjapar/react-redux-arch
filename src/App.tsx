@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Nav } from 'Pages/Nav';
 import { TheSidebar } from 'Pages/Sidebar';
 import User from 'Pages/User/User';

@@ -1,6 +1,5 @@
 import React from 'react'
-import actions from "Store/Nav/actions";
-import { useDispatch, connect } from 'react-redux'
+import { connect } from 'react-redux'
 import {
   CCreateElement,
   CSidebar,
@@ -26,12 +25,7 @@ const mapStateToProps = (state: RootState) => ({
 type Props = ReturnType<typeof mapStateToProps>;
 
 const UnconnectedSidebar: React.FC<Props> = ({ navState }) => {
-  const dispatch = useDispatch()
   const show = navState.sidebarShow
-
-  const showSidebar = (showSidebar: boolean) => {
-    dispatch(actions.showSidebar(showSidebar));
-}
 
   return (
     <CSidebar
@@ -45,12 +39,11 @@ const UnconnectedSidebar: React.FC<Props> = ({ navState }) => {
         />
         <CIcon
           className="c-sidebar-brand-minimized"
-          name="sygnet"
+          name="cilSettings"
           height={35}
         />
       </CSidebarBrand>
       <CSidebarNav>
-
         <CCreateElement
           items={navigation}
           components={{

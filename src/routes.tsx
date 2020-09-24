@@ -1,4 +1,3 @@
-import React from 'react';
 import { UserTable } from 'Pages/User/UserTable';
 
 const routes = [
@@ -6,4 +5,4 @@ const routes = [
     { path: '/user', exact: true,  name: 'User', component: UserTable },
   ];
   
-  export default routes;
+export default routes;

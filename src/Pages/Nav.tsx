@@ -9,8 +9,7 @@ import {
   CHeaderNavItem,
   CHeaderNavLink,
   CSubheader,
-  CBreadcrumbRouter,
-  CLink
+  CBreadcrumbRouter
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 

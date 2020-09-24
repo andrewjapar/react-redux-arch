@@ -9,8 +9,7 @@ type Props = {
 } & FormikFieldAttributes<any>;
 
 const InputField: FC<Props> = ({ label, type, required, ...otherProps}) => {
-  const [field, meta] = useField(otherProps);
-  const errorText = meta.error && meta.touched ? meta.error : '';
+  const [field] = useField(otherProps);
 
   return (
         <CFormGroup>
