@@ -1,8 +1,16 @@
-import { UserTable } from 'Pages/User/UserTable';
+import Dashboard from 'Pages/Dashboard/Dashboard';
+import User from 'Pages/User/User';
 
-const routes = [
-    { path: '/', exact: true, name: 'Home' },
-    { path: '/user', exact: true,  name: 'User', component: UserTable },
+interface Routes {
+  path: string
+  exact: boolean
+  name: string
+  component: React.FC
+}
+
+const routes: Routes[] = [
+    { path: '/dashboard', exact: true, name: 'Dashboard', component: Dashboard },
+    { path: '/user', exact: true,  name: 'User', component: User },
   ];
   
 export default routes;

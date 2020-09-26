@@ -1,17 +1,41 @@
 import React from 'react'
-import { FaUser, FaHome } from 'react-icons/fa';
+import { AiOutlineDashboard, AiOutlineShop, AiOutlineShoppingCart, AiOutlineSkin, AiOutlineUser, AiOutlineWallet } from 'react-icons/ai';
 
 export default [
     {
         _tag: 'CSidebarNavItem',
         name: 'Dashboard',
-        to: '/',
-        icon: <FaHome className="c-sidebar-nav-icon" />,
+        to: '/dashboard',
+        icon: <AiOutlineDashboard className="c-sidebar-nav-icon" />,
+    },
+    {
+        _tag: 'CSidebarNavItem',
+        name: 'Product',
+        to: '/product',
+        icon: <AiOutlineSkin className="c-sidebar-nav-icon" />,
+    },
+    {
+        _tag: 'CSidebarNavItem',
+        name: 'Stock Control',
+        to: '/stock-control',
+        icon: <AiOutlineShoppingCart className="c-sidebar-nav-icon" />,
+    },
+    {
+        _tag: 'CSidebarNavItem',
+        name: 'Sales Order',
+        to: '/sales-order',
+        icon: <AiOutlineWallet className="c-sidebar-nav-icon" />,
+    },
+    {
+        _tag: 'CSidebarNavItem',
+        name: 'Store Location',
+        to: '/store-location',
+        icon: <AiOutlineShop className="c-sidebar-nav-icon" />,
     },
     {
         _tag: 'CSidebarNavItem',
         name: 'Users',
         to: '/user',
-        icon: <FaUser className="c-sidebar-nav-icon" />,
-    }
+        icon: <AiOutlineUser className="c-sidebar-nav-icon" />,
+    },
 ]

@@ -24,11 +24,10 @@ const UnconnectedUserTable: React.FC<Props> = ({ users }) => {
     }, [dispatch]);
 
     return (
-
         <CDataTable
         fields={fields}
         items={users.users}
-        itemsPerPage={5}
+        itemsPerPage={15}
         pagination
         />
     );
