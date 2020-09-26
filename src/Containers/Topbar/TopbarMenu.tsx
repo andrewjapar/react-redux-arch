@@ -13,7 +13,7 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import routes from '../routes'
+import routes from 'routes'
 import { RootState } from 'Store'
 
 const mapStateToProps = (state: RootState) => ({
@@ -22,7 +22,7 @@ const mapStateToProps = (state: RootState) => ({
 
 type Props = ReturnType<typeof mapStateToProps>;
 
-const UnConnectedNav : React.FC<Props> = ({ navState }) => {
+const UnconnectedTopbarMenu : React.FC<Props> = ({ navState }) => {
     const dispatch = useDispatch()
     const sidebarShow = navState.sidebarShow
 
@@ -68,4 +68,4 @@ const UnConnectedNav : React.FC<Props> = ({ navState }) => {
     )
   }
   
-  export const Nav = connect(mapStateToProps)(UnConnectedNav);
+  export const TopBarMenu = connect(mapStateToProps)(UnconnectedTopbarMenu);

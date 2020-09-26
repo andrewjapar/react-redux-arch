@@ -14,8 +14,7 @@ import {
 
 import CIcon from '@coreui/icons-react'
 
-// sidebar nav config
-import navigation from './_nav'
+import navigation from './_sidebarNav'
 import { RootState } from 'Store'
 
 const mapStateToProps = (state: RootState) => ({
@@ -24,7 +23,7 @@ const mapStateToProps = (state: RootState) => ({
 
 type Props = ReturnType<typeof mapStateToProps>;
 
-const UnconnectedSidebar: React.FC<Props> = ({ navState }) => {
+const UnconnectedSidebarMenu: React.FC<Props> = ({ navState }) => {
   const show = navState.sidebarShow
 
   return (
@@ -59,4 +58,4 @@ const UnconnectedSidebar: React.FC<Props> = ({ navState }) => {
   )
 }
 
-export const TheSidebar = connect(mapStateToProps)(UnconnectedSidebar);
+export const SidebarMenu = connect(mapStateToProps)(UnconnectedSidebarMenu);

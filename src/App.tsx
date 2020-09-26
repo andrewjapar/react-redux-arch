@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
-import { Nav } from 'Pages/Nav';
-import { TheSidebar } from 'Pages/Sidebar';
+import { TopBarMenu } from 'Containers/Topbar/TopbarMenu';
+import { SidebarMenu } from 'Containers/Sidebar/SidebarMenu';
 import User from 'Pages/User/User';
 
 function App() {
 
   return (
     <div className="c-app c-default-layout">
-      <TheSidebar />
+      <SidebarMenu />
       <div className="c-wrapper">
-        <Nav />
+        <TopBarMenu />
         <div className="c-body">
           <Switch>
             <Route path="/user" component={User} />
