@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CContainer, CRow, CCol, CButton, CCard, CCardBody, CCardHeader } from "@coreui/react";
+import { CRow, CCol, CButton, CCard, CCardBody, CCardHeader } from "@coreui/react";
 import AddUser from "./AddUser";
 import { UserTable } from "./UserTable";
 

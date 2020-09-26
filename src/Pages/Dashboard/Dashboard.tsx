@@ -3,9 +3,7 @@ import React from 'react'
 import { AiOutlineCloudDownload } from 'react-icons/ai';
 import OrderChart from './OrderChart';
 
-interface Props {}
-
-const Dashboard: React.FC<Props> = ({}) => {
+const Dashboard = () => {
 
     return (
         <CCard>

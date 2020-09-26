@@ -1,4 +1,4 @@
-import React, { Attributes } from 'react'
+import React from 'react'
 import { CChartLine } from '@coreui/react-chartjs'
 import { getStyle, hexToRgba } from '@coreui/utils'
 
